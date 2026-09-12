@@ -19,7 +19,7 @@ Al ser un sitio web 100% estático y sin dependencias de lenguajes de servidor o
 Para visualizar y probar la funcionalidad de la galería, existen dos alternativas:
 
 **Opción 1: Ejecución directa (Recomendada para revisión rápida)**
-1. Clonar este repositorio en tu computadora local: `git clone https://github.com/tu-usuario/tu-repositorio.git`
+1. Clonar este repositorio en tu computadora local: `(https://github.com/MartinManese/PS-Teoria.git)`
 2. Navegar hasta la carpeta de la versión que se desea probar (por ejemplo, `/Version_IA_Gemini`).
 3. Hacer doble clic sobre el archivo `index.html` para abrirlo en el navegador web predeterminado.
 
