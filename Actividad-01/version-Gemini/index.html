@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Dibujos | Martín Manese</title>
+    <!-- Enlace obligatorio al archivo CSS separado -->
+    <link rel="stylesheet" href="estilosIA.css">
+</head>
+<body>
+
+    <header>
+        <h1>Mi Galería de Dibujos</h1>
+        <nav>
+            <ul>
+                <li><a href="#catalogo">Catálogo</a></li>
+                <li><a href="#mantenedor">Quién soy</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- SECCIÓN: CATÁLOGO DE DIBUJOS -->
+        <section id="catalogo">
+            <h2>Catálogo de Dibujos</h2>
+            
+            <!-- CONTROLES OCULTOS: CSS Radio Hack para filtrar sin JavaScript -->
+            <input type="radio" name="filtro-categoria" id="cat-todas" checked>
+            <input type="radio" name="filtro-categoria" id="cat-caricaturas">
+            <input type="radio" name="filtro-categoria" id="cat-paisajes">
+            <input type="radio" name="filtro-categoria" id="cat-anime">
+
+            <!-- MENÚ DESPLEGABLE CON CSS -->
+            <div class="menu-desplegable">
+                <span class="boton-desplegable">Seleccionar Categoría ▼</span>
+                <div class="contenido-desplegable">
+                    <!-- Estos labels actúan como botones que activan los radios de arriba -->
+                    <label for="cat-todas">Mostrar Todas</label>
+                    <label for="cat-caricaturas">Caricaturas</label>
+                    <label for="cat-paisajes">Paisajes</label>
+                    <label for="cat-anime">Animé</label>
+                </div>
+            </div>
+
+            <!-- GALERÍA DE IMÁGENES -->
+            <section class="galeria">
+                <!-- Categoría: Caricaturas -->
+                <article class="dibujo caricaturas">
+                    <img src="Imagenes/caricatura1.png" alt="Caricatura número uno">
+                </article>
+                <article class="dibujo caricaturas">
+                    <img src="Imagenes/caricatura2.png" alt="Caricatura número dos">
+                </article>
+
+                <!-- Categoría: Paisajes -->
+                <article class="dibujo paisajes">
+                    <img src="Imagenes/paisaje1.png" alt="Paisaje número uno">
+                </article>
+                <article class="dibujo paisajes">
+                    <img src="Imagenes/paisaje2.png" alt="Paisaje número dos">
+                </article>
+
+                <!-- Categoría: Animé -->
+                <article class="dibujo anime">
+                    <img src="Imagenes/anime1.png" alt="Dibujo estilo Animé uno">
+                </article>
+                <article class="dibujo anime">
+                    <img src="Imagenes/anime2.png" alt="Dibujo estilo Animé dos">
+                </article>
+            </section>
+        </section>
+
+        <!-- SECCIÓN: INFORMACIÓN DEL MANTENEDOR -->
+        <section id="mantenedor">
+            <h2>Información del Sitio</h2>
+            <article>
+                <p>Este sitio web ha sido diseñado, desarrollado y es mantenido por <strong>Martín Manese</strong>.</p>
+                <p>El propósito de esta página es exponer una colección de dibujos estructurada con código limpio, semántico y completamente estático.</p>
+            </article>
+        </section>
+
+        <!-- SECCIÓN: CONTACTO -->
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <form action="#" method="POST">
+                <label for="nombre">Nombre completo:</label>
+                <input type="text" id="nombre" name="nombre" required>
+
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="mensaje">Tu mensaje:</label>
+                <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+
+                <button type="submit">Enviar Mensaje</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Martín Manese. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
