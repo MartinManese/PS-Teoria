@@ -6,8 +6,8 @@ Este repositorio contiene la resolución práctica sobre la generación y audito
 El objetivo es crear un catálogo de dibujos responsivo, estructurado en HTML5 semántico y estilizado con CSS. Se cumple estrictamente con la restricción de no utilizar JavaScript, logrando el filtrado de categorías mediante la técnica de "CSS Radio Button Hack".
 
 ## Estructura del Repositorio
-- `/Version_IA_Gemini`: Contiene el código generado con la primera IA (Gemini).
-- `/Version_IA_ChatGPT`: Contiene el código generado con la segunda IA (ChaT GPT).
+- `/Version_IA_Gemini`: Contiene el código generado con la primera IA (Chat GPT).
+- `/Version_IA_ChatGPT`: Contiene el código generado con la segunda IA (Gemini).
 
 ## Tecnologías Utilizadas
 - HTML5 (Etiquetas semánticas)
