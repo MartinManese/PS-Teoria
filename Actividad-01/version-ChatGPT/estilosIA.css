@@ -1,0 +1,471 @@
+/* =========================================================
+   CONFIGURACION GENERAL
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f8fc;
+    color: #1d2a36;
+}
+
+
+/* =========================================================
+   ENCABEZADO
+   ========================================================= */
+
+.encabezado {
+    background: linear-gradient(135deg, #0755a5, #168bd0);
+    color: white;
+    text-align: center;
+    padding: 3rem 1rem;
+}
+
+.encabezado h1 {
+    margin: 0 0 0.5rem 0;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+}
+
+.encabezado p {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+
+/* =========================================================
+   BARRA DE NAVEGACION
+   ========================================================= */
+
+.navegacion {
+    background-color: #063b73;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.navegacion > ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navegacion li {
+    position: relative;
+}
+
+.navegacion a,
+.navegacion summary {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 1rem 1.2rem;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.navegacion a:hover,
+.navegacion summary:hover {
+    background-color: #168bd0;
+}
+
+
+/* =========================================================
+   MENU DESPLEGABLE
+   ========================================================= */
+
+.navegacion details {
+    position: relative;
+}
+
+.navegacion summary {
+    list-style: none;
+}
+
+.navegacion summary::-webkit-details-marker {
+    display: none;
+}
+
+.navegacion summary::after {
+    content: " ▾";
+}
+
+.menu-desplegable {
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    min-width: 190px;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+
+    background-color: #063b73;
+    border: 1px solid #69c8f2;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.menu-desplegable li {
+    width: 100%;
+}
+
+.menu-desplegable a {
+    width: 100%;
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   CONTENIDO PRINCIPAL
+   ========================================================= */
+
+main {
+    width: min(1200px, 92%);
+    margin: 0 auto;
+    padding: 2rem 0 4rem;
+}
+
+.inicio,
+.informacion {
+    background-color: white;
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 3rem;
+
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+.inicio h2,
+.informacion h2 {
+    color: #0755a5;
+    margin-top: 0;
+}
+
+
+/* =========================================================
+   CATEGORIAS
+   ========================================================= */
+
+/*
+   Las categorias permanecen ocultas inicialmente.
+   Cuando se selecciona una categoria desde el menu,
+   el selector :target permite mostrarla.
+*/
+
+.catalogo {
+    display: none;
+}
+
+.catalogo:target {
+    display: block;
+}
+
+
+/*
+   Cuando se selecciona una categoria, se oculta
+   la pantalla inicial.
+*/
+
+body:has(.catalogo:target) .inicio {
+    display: none;
+}
+
+
+/* =========================================================
+   TITULO DE CATEGORIA
+   ========================================================= */
+
+.titulo-categoria {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.titulo-categoria h2 {
+    color: #0755a5;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    margin-bottom: 0.5rem;
+}
+
+.titulo-categoria p {
+    margin-top: 0;
+    color: #526574;
+}
+
+
+/* =========================================================
+   GALERIA
+   ========================================================= */
+
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+    align-items: start;
+}
+
+
+/* =========================================================
+   MARCO DE LOS DIBUJOS
+   ========================================================= */
+
+.dibujo {
+    background-color: #eaf7ff;
+
+    border: 5px solid #0755a5;
+
+    outline: 3px solid #69c8f2;
+    outline-offset: -10px;
+
+    padding: 1.5rem;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.15);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.dibujo:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+/* =========================================================
+   IMAGENES
+   ========================================================= */
+
+.dibujo figure {
+    margin: 0;
+    text-align: center;
+}
+
+.dibujo img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    max-height: 600px;
+
+    object-fit: contain;
+
+    background-color: white;
+
+    border-radius: 5px;
+}
+
+.dibujo figcaption {
+    margin-top: 1rem;
+
+    font-size: 1.1rem;
+    font-weight: bold;
+
+    color: #0755a5;
+}
+
+
+/* =========================================================
+   FORMULARIO
+   ========================================================= */
+
+fieldset {
+    border: 2px solid #69c8f2;
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+
+legend {
+    color: #0755a5;
+    font-weight: bold;
+    padding: 0 0.5rem;
+}
+
+form p {
+    margin-bottom: 1.2rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-weight: bold;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 0.8rem;
+
+    font: inherit;
+
+    border: 2px solid #b5dff2;
+    border-radius: 6px;
+
+    background-color: #fafdff;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+
+    border-color: #168bd0;
+
+    box-shadow:
+        0 0 0 2px rgba(22, 139, 208, 0.15);
+}
+
+textarea {
+    resize: vertical;
+}
+
+button {
+    padding: 0.8rem 1.5rem;
+
+    border: none;
+    border-radius: 6px;
+
+    background-color: #0755a5;
+    color: white;
+
+    font-size: 1rem;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #168bd0;
+}
+
+
+/* =========================================================
+   RESPONSABLE
+   ========================================================= */
+
+.responsable {
+    font-size: 1.3rem;
+    color: #0755a5;
+}
+
+
+/* =========================================================
+   PIE DE PAGINA
+   ========================================================= */
+
+.pie {
+    background-color: #063b73;
+    color: white;
+    text-align: center;
+
+    padding: 2rem 1rem;
+}
+
+.pie p {
+    margin: 0.4rem 0;
+}
+
+
+/* =========================================================
+   RESPONSIVE - TABLETS
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .navegacion > ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navegacion li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .navegacion a,
+    .navegacion summary {
+        width: 100%;
+    }
+
+    .menu-desplegable {
+        position: static;
+        width: 100%;
+    }
+
+    .galeria {
+        grid-template-columns: 1fr;
+    }
+
+    main {
+        width: 94%;
+    }
+
+    .inicio,
+    .informacion {
+        padding: 1.5rem;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE - CELULARES
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .encabezado {
+        padding: 2rem 1rem;
+    }
+
+    .encabezado h1 {
+        font-size: 2rem;
+    }
+
+    .encabezado p {
+        font-size: 1rem;
+    }
+
+    main {
+        width: 95%;
+        padding-top: 1.5rem;
+    }
+
+    .inicio,
+    .informacion {
+        padding: 1rem;
+    }
+
+    .dibujo {
+        padding: 1rem;
+        border-width: 4px;
+    }
+
+    fieldset {
+        padding: 1rem;
+    }
+
+    button {
+        width: 100%;
+    }
+}
